@@ -3,6 +3,10 @@
 }
 
 body {
-    background-color: #E5E5CB;
-    color: #1A120B;
+    background-color: #e5e5cb;
+    color: #1a120b;
+}
+
+#navbar img {
+    width: 60px;
 }
