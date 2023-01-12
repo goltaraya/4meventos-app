@@ -27,7 +27,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Criar Evento</a>
+                        <a href="/eventos/criar" class="nav-link">Criar Evento</a>
                     </li>
                     <li class="nav-item">
                         <a href="/" class="nav-link">Entrar</a>
@@ -50,6 +50,7 @@
         <p>4M Eventos &copy; 2023</p>
     </footer>
     <script src="/js/scripts.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 </body>
 
 </html>
