@@ -5,8 +5,15 @@
 @section('content')
 
     @foreach ($events as $event)
-        <h3>{{ $event->title }}</h3>
-        <p>{{ $event->description }}</p>
-        <p>{{ $event->city }}</p>
+        <div class="card" style="width: 20rem; display: inline-block">
+            <img class="card-img-top" src="/img/banner.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ $event->title }}</h5>
+                <p class="card-text">{{ $event->description }}</p>
+                <p class="card-text">{{ $event->city }}</p>
+                <a href="#" class="btn btn-primary">Ver mais</a>
+            </div>
+        </div>
     @endforeach
+
 @endsection
