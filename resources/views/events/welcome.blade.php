@@ -4,8 +4,9 @@
 
 @section('content')
 
-
-    <h3>Evento: {{ $evento }}</h3>
-    <p>Local: {{ $local }}</p>
-    <p>Solicitante: {{ $solicitante }}</p>
+    @foreach ($events as $event)
+        <h3>{{ $event->title }}</h3>
+        <p>{{ $event->description }}</p>
+        <p>{{ $event->city }}</p>
+    @endforeach
 @endsection

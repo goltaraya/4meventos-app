@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('local', 100);
-            $table->text('description');
-            $table->date('date');
             $table->timestamps();
+            $table->string('title', 200);
+            $table->text('description');
+            $table->string('city', 100);
+            $table->boolean('private');
         });
     }
 
