@@ -1,19 +1,33 @@
 @extends('layouts.main')
 @section('title', 'Home')
-@section('title-header', 'Página Inicial')
 
 @section('content')
 
-    @foreach ($events as $event)
-        <div class="card" style="width: 20rem; display: inline-block">
-            <img class="card-img-top" src="/img/banner.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{ $event->title }}</h5>
-                <p class="card-text">{{ $event->description }}</p>
-                <p class="card-text">{{ $event->city }}</p>
-                <a href="#" class="btn btn-primary">Ver mais</a>
+
+    <div id="search-container" class="col-md-12">
+        <h1>Busque um evento</h1>
+        <form action="">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Procurar">
+        </form>
+    </div>
+
+    <div id="events-container" class="col-md-12">
+        <h2>Próximos Eventos</h2>
+        <p>Veja os eventos que ocorrerão nos próximos dias</p>
+    </div>
+
+    <div id="cards-container" class="row">
+        @foreach ($events as $event)
+            <div class="card col-md-3">
+                <img src="/img/event_placeholder.jpg" alt="{{ $event->title }}">
+                <div class="card-body">
+                    <p class="card-date">10/01/2023</p>
+                    <h5 class="card-title">{{ $event->title }}</h5>
+                    <p class="card-participants">50 participantes</p>
+                    <a class="btn btn-primary">Saber mais</a>
+                </div>
             </div>
-        </div>
-    @endforeach
+        @endforeach
+    </div>
 
 @endsection

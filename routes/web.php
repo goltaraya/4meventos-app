@@ -17,9 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [EventController::class, 'index']);
 
 Route::get('/eventos/criar', [EventController::class, 'create']);
-
-Route::get('/eventos', function () {
-    $search = request('search');
-
-    return view('events', ['search' => $search]);
-});
+Route::post('/eventos', [EventController::class, 'store']);
