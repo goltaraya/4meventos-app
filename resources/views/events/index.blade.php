@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <p class="card-date">10/01/2023</p>
                     <h5 class="card-title">{{ $event->title }}</h5>
-                    <p class="card-participants">50 participantes</p>
+                    <p class="card-participants">{{ $event->participants }} participantes</p>
                     <a class="btn btn-primary">Saber mais</a>
                 </div>
             </div>
