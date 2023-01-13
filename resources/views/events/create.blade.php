@@ -11,6 +11,10 @@
                 <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento">
             </div>
             <div class="form-group">
+                <label for="participants">Quantidade de participantes:</label>
+                <input type="text" class="form-control" id="participants" name="participants" placeholder="Quantidade de participantes">
+            </div>
+            <div class="form-group">
                 <label for="city">Cidade:</label>
                 <input type="text" class="form-control" id="city" name="city" placeholder="Cidade">
             </div>

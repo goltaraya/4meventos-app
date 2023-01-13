@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu" rel="stylesheet">
     {{-- CSS do Projeto --}}
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/4meventos_logo.svg" type="image/x-icon">
 </head>
 
 <body>
@@ -41,11 +42,16 @@
         </nav>
     </header>
 
-    <h1>@yield('title-header')</h1>
-    @yield('content')
-
-    {{-- Conteúdo da página --}}
-
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                @if (session('msg'))
+                    <p class="msg">{{ session('msg') }}</p>
+                @endif
+                @yield('content')
+            </div>
+        </div>
+    </main>
     <footer>
         <p>4M Eventos &copy; 2023</p>
     </footer>
