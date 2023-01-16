@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #fff;
+    background-color: #EEEEEE;
     border-bottom: 1px solid #ccc;
 }
 
@@ -44,18 +44,20 @@ header {
 
 /* navbar */
 #navbar img {
-    width: 40px;
+    width: 50px;
+    margin-left: 15px;
 }
 
 #navbar {
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #EEEEEE;
     padding: 5px 0;
 }
 
 #navbar a {
-    font-size: 14px;
+    font-size: 16px;
     color: #757575;
+    margin-right: 15px;
 }
 
 #navbar a:hover {

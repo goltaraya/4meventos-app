@@ -20,7 +20,7 @@
                     <ion-icon name="cafe-outline"></ion-icon> Dono do evento
                 </p>
                 <a href="#" class="btn btn-primary" id="event-submit">Confirmar Presença</a>
-                @if (count($event->items) > 0)
+                @if ($event->items != null)
                     <div class="items-container">
                         <h3>Itens do evento:</h3>
                         <ul id="items-list">
