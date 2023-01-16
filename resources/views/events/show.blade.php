@@ -20,6 +20,18 @@
                     <ion-icon name="cafe-outline"></ion-icon> Dono do evento
                 </p>
                 <a href="#" class="btn btn-primary" id="event-submit">Confirmar Presença</a>
+                @if (count($event->items) > 0)
+                    <div class="items-container">
+                        <h3>Itens do evento:</h3>
+                        <ul id="items-list">
+                            @foreach ($event->items as $item)
+                                <li>
+                                    <ion-icon name="chevron-forward-outline"></ion-icon> <span>{{ $item }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
             <div id="description-container" class="col-md-12">
                 <h3>Sobre o evento:</h3>
