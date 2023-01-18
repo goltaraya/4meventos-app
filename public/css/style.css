@@ -176,6 +176,9 @@ header {
     font-weight: bold;
 }
 
+#description-container h3 {
+    padding-top: 20px;
+}
 #info-container ion-icon {
     font-size: 20px;
     color: #f2a340;
