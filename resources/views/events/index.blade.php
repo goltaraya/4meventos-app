@@ -21,7 +21,7 @@
             <div class="card col-md-3">
                 <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
                 <div class="card-body">
-                    <p class="card-date">10/01/2023</p>
+                    <p class="card-date">{{ date_format($event->date, 'd/m/Y') }}</p>
                     <h5 class="card-title">{{ $event->title }}</h5>
                     <p class="card-participants">{{ $event->participants }} participantes</p>
                     <a class="btn btn-primary" href="/eventos/{{ $event->id }}">Saber mais</a>

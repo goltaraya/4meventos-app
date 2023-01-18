@@ -19,6 +19,9 @@
                 <p class="event-owner">
                     <ion-icon name="cafe-outline"></ion-icon> Dono do evento
                 </p>
+                <p class="event-date">
+                    <ion-icon name="calendar-outline"></ion-icon> {{ date_format($event->date, 'd/m/Y') }}
+                </p>
                 <a href="#" class="btn btn-primary" id="event-submit">Confirmar Presença</a>
                 @if ($event->items != null)
                     <div class="items-container">
