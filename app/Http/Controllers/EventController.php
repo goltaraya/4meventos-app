@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use PHPUnit\Util\InvalidDataSetException;
+use Ramsey\Uuid\Exception\DateTimeException;
+use Spatie\FlareClient\Http\Exceptions\InvalidData;
+use TheSeer\Tokenizer\Exception;
 
 class EventController extends Controller
 {
@@ -29,6 +33,7 @@ class EventController extends Controller
         $event->description = $request->description;
         $event->participants = $request->participants;
         $event->items = $request->items;
+
         $event->date = $request->date;
 
         // Image upload
