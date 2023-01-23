@@ -17,7 +17,7 @@
                     <ion-icon name="people-outline"></ion-icon> {{ $event->participants }} participantes
                 </p>
                 <p class="event-owner">
-                    <ion-icon name="cafe-outline"></ion-icon> Dono do evento
+                    <ion-icon name="cafe-outline"></ion-icon> {{ $eventOwner['name'] }}
                 </p>
                 <p class="event-date">
                     <ion-icon name="calendar-outline"></ion-icon> {{ date_format($event->date, 'd/m/Y') }}
