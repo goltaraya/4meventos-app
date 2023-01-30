@@ -79,4 +79,14 @@ class EventController extends Controller
             ->toArray();
         return view('events.show', ["event" => $event, "eventOwner" => $eventOwner]);
     }
+
+
+    public function dashboard()
+    {
+        $userId = auth()->user()->id;
+
+        $events = Event::where('user_id', $userId)->get();
+
+        return view('dashboard', ['events' => $events]);
+    }
 }
