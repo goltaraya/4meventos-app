@@ -9,6 +9,7 @@ use Ramsey\Uuid\Exception\DateTimeException;
 use Spatie\FlareClient\Http\Exceptions\InvalidData;
 use TheSeer\Tokenizer\Exception;
 
+
 class EventController extends Controller
 {
     public function index()
@@ -80,7 +81,6 @@ class EventController extends Controller
         return view('events.show', ["event" => $event, "eventOwner" => $eventOwner]);
     }
 
-
     public function dashboard()
     {
         $userId = auth()->user()->id;
@@ -88,5 +88,21 @@ class EventController extends Controller
         $events = Event::where('user_id', $userId)->get();
 
         return view('dashboard', ['events' => $events]);
+    }
+
+    public function joinEvent($id)
+    {
+        $user = auth()->user();
+        $user->eventsAsParticipant()->attach($id);
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Sua presença foi confirmada no evento ' . $event->title);
+    }
+
+    public function destroy($id)
+    {
+        Event::findOrFail($id)->delete();
+
+        return redirect('/dashboard')->with('mgs', 'Evento deletado com sucesso.');
     }
 }

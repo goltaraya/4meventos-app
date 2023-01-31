@@ -22,7 +22,17 @@
                 <p class="event-date">
                     <ion-icon name="calendar-outline"></ion-icon> {{ date_format($event->date, 'd/m/Y') }}
                 </p>
-                <a href="#" class="btn btn-primary" id="event-submit">Confirmar Presença</a>
+                <form action="/eventos/join/{{ $event->id }}" method="POST">
+                    @csrf
+                    <a href="/eventos/join/{{ $event->id }}"
+                        class="btn btn-primary"
+                        id="event-submit"
+                        onclick="event.preventDefault();
+                        this.closest('form').submit();
+                        ">
+                        Confirmar Presença
+                    </a>
+                </form>
                 @if ($event->items != null)
                     <div class="items-container">
                         <h3>Itens do evento:</h3>
