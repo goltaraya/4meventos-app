@@ -210,9 +210,17 @@ header {
 
 .dashboard-events-container table {
     margin: 0;
-
 }
 
+.event-name a {
+    text-decoration: none;
+    color: #212121;
+}
+
+
+.dashboard-events-container update-btn {
+    color: white;
+}
 /* footer */
 footer {
     text-align: center;
