@@ -23,7 +23,7 @@
     <div id="cards-container" class="row">
         @foreach ($events as $event)
             <div class="card col-md-3">
-                <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
+                <img src="/img/{{ $event->image ? 'events/' . $event->image : 'banner.jpg' }}" alt="{{ $event->title }}">
                 <div class="card-body">
                     <p class="card-date">{{ date_format($event->date, 'd/m/Y') }}</p>
                     <h5 class="card-title">{{ $event->title }}</h5>
@@ -37,6 +37,7 @@
         <p class="subtitle">Não foi possível encontrar nenhum evento com {{ $search }}. <a href="/">Ver
                 todos</a></p>
     @elseif (count($events) == 0)
-        <p class="subtitle">Ainda não existe nenhum evento cadastrado. <a href="/eventos/criar">Clique aqui para criar um.</a></p>
+        <p class="subtitle">Ainda não existe nenhum evento cadastrado. <a href="/eventos/criar">Clique aqui para criar
+                um.</a></p>
     @endif
 @endsection

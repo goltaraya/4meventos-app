@@ -5,7 +5,8 @@
     <div class="col-md-10 offset-md-1">
         <div class="row">
             <div id="image-container" class="col-md-6">
-                <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}" class="img-fluid">
+                <img src="/img/{{ $event->image ? 'events/' . $event->image : 'banner.jpg' }}" alt="{{ $event->title }}"
+                    class="img-fluid">
             </div>
 
             <div id="info-container" class="col-md-6">
@@ -24,9 +25,7 @@
                 </p>
                 <form action="/eventos/join/{{ $event->id }}" method="POST">
                     @csrf
-                    <a href="/eventos/join/{{ $event->id }}"
-                        class="btn btn-primary"
-                        id="event-submit"
+                    <a href="/eventos/join/{{ $event->id }}" class="btn btn-primary" id="event-submit"
                         onclick="event.preventDefault();
                         this.closest('form').submit();
                         ">
