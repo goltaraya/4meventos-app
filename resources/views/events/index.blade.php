@@ -37,7 +37,7 @@
         <p class="subtitle">Não foi possível encontrar nenhum evento com {{ $search }}. <a href="/">Ver
                 todos</a></p>
     @elseif (count($events) == 0)
-        <p class="subtitle">Ainda não existe nenhum evento cadastrado. <a href="/eventos/criar">Clique aqui para criar
+        <p class="subtitle">Ainda não existe nenhum evento cadastrado. <a href="/eventos/create">Clique aqui para criar
                 um.</a></p>
     @endif
 @endsection

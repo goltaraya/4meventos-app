@@ -28,7 +28,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/eventos/criar" class="nav-link">Criar Evento</a>
+                        <a href="/eventos/create" class="nav-link">Criar Evento</a>
                     </li>
                     {{-- Caso o usuário já esteja logado --}}
                     @auth

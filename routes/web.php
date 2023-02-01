@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [EventController::class, 'index']);
 
-Route::get('/eventos/criar', [EventController::class, 'create'])->middleware('auth');
+Route::get('/eventos/create', [EventController::class, 'create'])->middleware('auth');
 Route::get('/eventos/{id}', [EventController::class, 'show']);
-Route::post('/eventos', [EventController::class, 'store']);
-Route::get('/eventos/edit/{id}', [EventController::class, 'edit']);
-Route::put('/eventos/edit/{id}', [EventController::class, 'store']);
+Route::post('/eventos', [EventController::class, 'store'])->middleware('auth');
+Route::get('/eventos/edit/{id}', [EventController::class, 'edit'])->middleware('auth');
+Route::put('/eventos/update/{id}', [EventController::class, 'update'])->middleware('auth');
 Route::delete('/eventos/{id}', [EventController::class, 'destroy'])->middleware('auth');
+Route::post('/eventos/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
 
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
-Route::post('/eventos/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');

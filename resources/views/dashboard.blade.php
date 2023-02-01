@@ -23,7 +23,7 @@
                             <td class="event-name"><a href="/eventos/{{ $event->id }}">{{ $event->title }}</a></td>
                             <td>{{ date_format(new DateTime($event->date), 'd/m/Y') }}</td>
                             <td>
-                                <a href="#" class="btn btn-success update-btn">
+                                <a href="/eventos/edit/{{ $event->id }}" class="btn btn-success update-btn">
                                     <ion-icon name="pencil-outline"></ion-icon> Editar
                                 </a>
                                 <form action="/eventos/{{ $event->id }}" method="POST">
@@ -39,7 +39,7 @@
                 </tbody>
             </table>
         @else
-            <p>Você não cadastrou nenhum evento ainda. Clique aqui para <a href="/eventos/criar">cadastrar</a></p>
+            <p>Você não cadastrou nenhum evento ainda. Clique aqui para <a href="/eventos/create">cadastrar</a></p>
         @endif
     </div>
 
@@ -64,14 +64,11 @@
                             <td class="event-name"><a href="/eventos/{{ $event->id }}">{{ $event->title }}</a></td>
                             <td>{{ date_format(new DateTime($event->date), 'd/m/Y') }}</td>
                             <td>
-                                <a href="#" class="btn btn-success update-btn">
-                                    <ion-icon name="pencil-outline"></ion-icon> Editar
-                                </a>
                                 <form action="/eventos/{{ $event->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger delete-btn">
-                                        <ion-icon name="trash-outline"></ion-icon> Deletar
+                                        <ion-icon name="trash-outline"></ion-icon> Remover Inscrição
                                     </button>
                                 </form>
                             </td>
@@ -80,8 +77,8 @@
                 </tbody>
             </table>
         @else
-            <p>Você não está participando de nenhum evento. <a href="/eventos/criar">Clique aqui para procurar eventos de
-                    seu interesse</a>
+            <p>Você não está participando de nenhum evento. <a href="/">Clique aqui para procurar eventos de seu
+                    interesse</a>
             </p>
         @endif
     </div>

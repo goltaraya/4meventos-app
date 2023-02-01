@@ -135,11 +135,13 @@ header {
 }
 
 /* Event create page */
-#event-create-container {
+#event-create-container,
+#event-edit-container {
     padding: 30px;
 }
 
-#event-create-container label {
+#event-create-container label,
+#event-edit-container label {
     font-weight: bold;
 }
 
@@ -148,6 +150,14 @@ header {
 #event-create-container textarea {
     font-size: 12px;
 }
+
+#event-edit-container input,
+#event-edit-container select,
+#event-edit-container textarea {
+    font-size: 12px;
+}
+
+
 
 /* Event page */
 #image-container,
@@ -221,6 +231,13 @@ header {
 .dashboard-events-container update-btn {
     color: white;
 }
+
+/* Edit page */
+.img-preview {
+    width: 150px;
+    margin-top: 20px;
+}
+
 /* footer */
 footer {
     text-align: center;
