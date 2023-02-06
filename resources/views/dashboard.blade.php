@@ -64,7 +64,7 @@
                             <td class="event-name"><a href="/eventos/{{ $event->id }}">{{ $event->title }}</a></td>
                             <td>{{ date_format(new DateTime($event->date), 'd/m/Y') }}</td>
                             <td>
-                                <form action="/eventos/{{ $event->id }}" method="POST">
+                                <form action="/eventos/leave/{{ $event->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger delete-btn">
